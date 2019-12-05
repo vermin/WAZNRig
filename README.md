@@ -189,9 +189,6 @@ waznrigDaemon -o pool.wazn.io:5555 -u YOUR_WAZN_WALLET -p x -k --cc-url=IP_OF_CC
 
     `sudo sysctl -w vm.nr_hugepages=128`
 
-## Contacts
-* [WAZN](link)
-
 ## License
 ```
 Licensed under the GPL-3.0
