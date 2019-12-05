@@ -5,7 +5,7 @@ WAZNRig is a high performance WAZN1, RandomX, CryptoNight and Argon2 CPU miner s
 
 [![License](https://img.shields.io/badge/license-GPL--3.0-blue)](https://opensource.org/licenses/GPL-3.0)
 
-:bulb: **This is CPU variant of WAZNRig. If you're looking for the AMD GPU (OpenCL) version redirect to: [github.com/project-wazn/waznrig-amd](https://github.com/project-wazn/waznrig-amd/).**
+**This is CPU variant of WAZNRig. If you're looking for the AMD GPU (OpenCL) version redirect to: [waznrig-amd](https://github.com/project-wazn/waznrig-amd/).**
 
 ### About WAZNRig
 
