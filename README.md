@@ -1,36 +1,26 @@
-# XMRigCC 
+WAZNRig
+======================
 
-**:warning: Monero will change PoW algorithm to RandomX on November 30. Make sure you upgrade to the latest Release before that**
+WAZNRig is a high performance WAZN1, RandomX, CryptoNight and Argon2 CPU miner supporting Win10 and Ubuntu OS flavors.
 
-XMRig is a high performance RandomX, CryptoNight and Argon2 CPU miner, with official support for Windows.
+[![License](https://img.shields.io/badge/license-GPL--3.0-blue)](https://opensource.org/licenses/GPL-3.0)
 
-:bulb: **This is the CPU variant of XMRigCC, if you're looking for the AMD GPU (OpenCL) variant [click here](https://github.com/Bendr0id/xmrigCC-amd/).**
+:bulb: **This is CPU variant of WAZNRig. If you're looking for the AMD GPU (OpenCL) version redirect to: [github.com/project-wazn/waznrig-amd](https://github.com/project-wazn/waznrig-amd/).**
 
-[![Windows Build status](https://ci.appveyor.com/api/projects/status/l8v7cuuy320a4tpd?svg=true)](https://ci.appveyor.com/project/Bendr0id/xmrigcc)
-[![Docker Build status](https://img.shields.io/docker/build/bendr0id/xmrigcc.svg)](https://hub.docker.com/r/bendr0id/xmrigcc/)
-[![GitHub release](https://img.shields.io/github/release/bendr0id/xmrigCC/all.svg)](https://github.com/bendr0id/xmrigCC/releases)
-[![Github downloads latest](https://img.shields.io/github/downloads/bendr0id/xmrigCC/latest/total.svg)](https://github.com/bendr0id/xmrigCC/releases)
-[![Github downloads total](https://img.shields.io/github/downloads/bendr0id/xmrigCC/total.svg)](https://github.com/bendr0id/xmrigCC/releases)
-[![GitHub stars](https://img.shields.io/github/stars/bendr0id/xmrigCC.svg)](https://github.com/bendr0id/xmrigCC/stargazers)
+### About WAZNRig
 
-![XMRigCC Logo](https://i.imgur.com/7mi0WCe.png)
+WAZNRig is a [XMRigCC](https://github.com/Bendr0id/xmrigCC) fork adding remote control and monitoring functions to WAZNRig instances via a Webfrontend and REST api. It has built in "Command and Control" (C&amp;C) server part, a daemon keeping waznrigMiner alive and sending its current status to C&amp;C Server.
 
-### About XMRigCC
+The modified version can handle commands as "update config", "start/stop mining" or "restart/shutdown/reboot" and they can be sent from the C&amp;C Dashboard.
 
-XMRigCC is a [XMRig](https://github.com/xmrig/xmrig) fork which adds remote control and monitoring functions to XMRigCC miners. It lets you control your miners via a Dashboard or the REST api.
-XMRigCC has a "Command and Control" (C&amp;C) server part, a daemon to keep the XMRigCC miner alive and modifications to send the current status to the C&amp;C Server.
-The modified version can handle commands like "update config", "start/stop mining" or "restart/shutdown/reboot" which can be send from the C&amp;C-Server Dashboard. 
-Assign config templates to multiple miners with a single click and let them switch configs without connecting to each of them.
-Watch your miners logs with the simple remote Log viewer and monitor you miners. When the hashrate drops or one of your miners went offline you can get a notification via 
-PushOver or Telegram automatically so that you dont need to watch your miners all day.
+Assign config templates to multiple miners with a single click and let them switch configs without connecting to any of them. Watch your miners logs with simple remote log viewer and monitor you miners. When the hash rate drops or one of your miners goes offline you can opt-in notification system provided by PushOver or Telegram and status changes will be sent to you automatically.
 
-Full Windows/Linux compatible, and you can mix Linux and Windows miner on one XMRigCCServer.
-
-## Additional features of XMRigCC (on top of XMRig)
+## Additional features of WAZNRig
 
 Check the [Coin Configuration](https://github.com/Bendr0id/xmrigCC/wiki/Coin-configurations) guide
+
+* **Support of WAZN1 variant (algo: "cn-wazn1")**
 * **Support of RandomxARQ variant (algo: "rx/arq")**
-* **Support of UPX2 variant (algo: "cn-extremelite/upx2")**
 * **Support of CN-Conceal variant (algo: "cn/conceal")**
 * **Better performance for ARMv8 CPUs**
 * Full SSL/TLS support
@@ -38,45 +28,35 @@ Check the [Coin Configuration](https://github.com/Bendr0id/xmrigCC/wiki/Coin-con
 * Command and control server
 * CC Dashboard with:
     * statistics of all connected miners
-    * remote control miners (start/stop/restart/shutdown) 
+    * remote control miners (start/stop/restart/shutdown)
     * remote configuration changes of miners
-    * simple config editor for miner / config templates 
-    * monitoring / offline notification push notifications via Pushover and Telegram 
+    * simple config editor for miner / config templates
+    * monitoring / offline notification push notifications via Pushover and Telegram
 * Daemon to restart the miner
 
-
-**XMRigCC Miner**
+**WAZNRig Daemon**
 
 <img src="doc/screenshot.png" width="800" >
 
-**XMRigCC Server**
+**WAZNRig Server**
 
 <img src="doc/screenshot_server.png" width="800" >
 
-**XMRigCC Dashboard**
+**WAZNRig Dashboard**
 
 <img src="doc/screenshot_dashboard.png" width="800" >
 
-#### Table of contents
-* [Download](#download)
-* [Usage](#usage)
-* [Wiki/Building/Howto](https://github.com/Bendr0id/xmrigCC/wiki/)
-* [Common Issues](#common-issues)
-* [Donations](#donations)
-* [Contacts](#contact)
-
 ## Download
-* Binary releases: https://github.com/Bendr0id/xmrigCC/releases
-* Git tree: https://github.com/Bendr0id/xmrigCC.git
-  * Clone with `git clone https://github.com/Bendr0id/xmrigCC.git` :hammer: [Build instructions](https://github.com/xmrig/xmrig/wiki/Build.
+* Binary releases: https://github.com/project-wazn/waznrig/releases
+* Git tree: https://github.com/project-wazn/waznrig.git
 
 ## Usage
-### Basic example XMRigCCServer
+### Basic example waznrigServer
 ```
-xmrigServer --port=3344 --user=admin --pass=pass --access-token=SECRET_TOKEN_TO_ACCESS_CC_SERVER
+waznrigServer --port=3344 --user=admin --pass=pass --access-token=SECRET_TOKEN_TO_ACCESS_CC_SERVER
 ```
 
-### Options XMRigCCServer
+### Options waznrigServer
 ```
   -b, --bind arg                The CC Server bind ip (default: 0.0.0.0)
   -p, --port N                  The CC Server port
@@ -118,12 +98,12 @@ xmrigServer --port=3344 --user=admin --pass=pass --access-token=SECRET_TOKEN_TO_
 ```
 
 
-### Basic example xmrigDaemon
+### Basic example waznrigDaemon
 ```
-xmrigDaemon -o pool.hashvault.pro:5555 -u YOUR_WALLET -p x -k --cc-url=IP_OF_CC_SERVER:PORT --cc-access-token=SECRET_TOKEN_TO_ACCESS_CC_SERVER --cc-worker-id=OPTIONAL_WORKER_NAME
+waznrigDaemon -o pool.wazn.io:5555 -u YOUR_WAZN_WALLET -p x -k --cc-url=IP_OF_CC_SERVER:PORT --cc-access-token=SECRET_TOKEN_TO_ACCESS_CC_SERVER --cc-worker-id=OPTIONAL_WORKER_NAME
 ```
 
-### Options xmrigDaemon
+### Options waznrigDaemon
 ```
   -a, --algo=ALGO                   specify the algorithm to use
                                       cn/r, cn/2, cn/1, cn/0, cn/double, cn/half, cn/fast,
@@ -131,7 +111,7 @@ xmrigDaemon -o pool.hashvault.pro:5555 -u YOUR_WALLET -p x -k --cc-url=IP_OF_CC_
                                       cn-lite/1,
                                       cn-heavy/xhv, cn-heavy/tube, cn-heavy/0,
                                       cn-pico
-                                      cn-extremelite
+                                      cn-wazn1, cn-extremelite
                                       argon2/chukwa, argon2/wrkz
                                       rx/wow, rx/loki, rx/arq
       --coin=COIN                   specify coin instead of algorithm                                      
@@ -188,45 +168,34 @@ xmrigDaemon -o pool.hashvault.pro:5555 -u YOUR_WALLET -p x -k --cc-url=IP_OF_CC_
 
 
 ## Common Issues
-### XMRigMiner
-* XMRigMiner is just the worker, it is not designed to work standalone. Please start **XMRigDaemon** instead.
+### waznrigMiner
+* waznrigMiner is just the worker, it is not designed to work standalone. Please start **waznrigDaemon** instead.
 
 ### Windows only: DLL error on starting
 * Make sure that you installed latest Visual C++ Redistributable for Visual Studio 2015. Can be downloaded here: [microsoft.com](https://www.microsoft.com/de-de/download/details.aspx?id=48145)
 
 ### Linux only: Background mode
-* The `--background` option will only work properly for the XMRigServer. But there is a simple workaround for the XMRigDaemon process. Just append an `&` to the command and it will run smoothly in the background.
+* The `--background` option will only work properly for the waznrigServer. But there is a simple workaround for the waznrigDaemon process. Just append an `&` to the command and it will run smoothly in the background.
 
-    `./xmrigDaemon --config=my_config_cc.json &` or you just use `screen`
+    `./waznrigDaemon --config=my_config_cc.json &` or you just use `screen`
 
 
 ### HUGE PAGES unavailable (Windows)
-* Run XMRigDaemon as Administrator.
+* Run waznrigDaemon as Administrator.
 * On Windows it automatically enables SeLockMemoryPrivilege for current user, but reboot or sign out still required. [Manual instruction](https://msdn.microsoft.com/en-gb/library/ms190730.aspx).
 
 ### HUGE PAGES unavailable (Linux)
-* Before starting XMRigDaemon set huge pages
+* Before starting waznrigDaemon set huge pages
 
     `sudo sysctl -w vm.nr_hugepages=128`
 
- 
-## Donations
-* Default donation 5% (5 minutes in 100 minutes) can be reduced to 1% via command line option `--donate-level`. 
+## Contacts
+* [WAZN](link)
 
-##### BenDroid (XMRigCC):
-XMR:  `4BEn3sSa2SsHBcwa9dNdKnGvvbyHPABr2JzoY7omn7DA2hPv84pVFvwDrcwMCWgz3dQVcrkw3gE9aTC9Mi5HxzkfF9ev1eH`
-
-AEON: `Wmtm4S2cQ8uEBBAVjvbiaVAPv2d6gA1mAUmBmjna4VF7VixLxLRUYag5cvsym3WnuzdJ9zvhQ3Xwa8gWxPDPRfcQ3AUkYra3W`
-
-BTC:  `3Gwq9tveCZtLAiXX7mxhjbrh38GPx1iXdB`
-
-##### xmrig:
-XMR:  `48edfHu7V9Z84YzzMa6fUueoELZ9ZRXq9VetWzYGzKt52XU5xvqgzYnDK9URnRoJMk1j8nLwEVsaSWJ4fhdUyZijBGUicoD`
-
-BTC:  `1P7ujsXeX7GxQwHNnJsRMgAdNkFZmNVqJT`
-
-## Contact
-* ben [at] graef.in
-* Telegram: @BenDr0id
-* [discord](https://discord.gg/r3rCKTB)
-* [reddit](https://www.reddit.com/user/BenDr0id/)
+## License
+```
+Licensed under the GPL-3.0
+Copyright (c) 2019 WAZN Project
+Copyright (c) 2018-2019 Bendr0id
+Copyright (c) 2017-2019 xmrig
+```
